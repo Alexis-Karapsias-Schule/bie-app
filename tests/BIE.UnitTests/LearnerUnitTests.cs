@@ -10,7 +10,10 @@ public class LearnerUnitTests
     public void TouristAt30DaysIsApproved()
     {
         var entry = new Entry("Sam Test", "Orion", "Tourismus", 30, false, false, false, true);
-        // TODO: Act und Assert gemäss R3 ergänzen.
-        Assert.Fail("TODO: Assertions gemäss Arbeitsauftrag ergänzen.");
+        // Act
+        var result = EntryPolicy.Evaluate(entry);
+
+        // Assert
+        Assert.AreEqual("approved", result.Status);
     }
 }
